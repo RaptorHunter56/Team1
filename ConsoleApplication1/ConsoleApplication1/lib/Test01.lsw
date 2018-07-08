@@ -1,0 +1,14 @@
+using System;
+
+namespace Foo
+{
+    public partial class Bar
+    {
+        public void SayHello(string Name)
+        {
+            System.Console.WriteLine("Hello " + Name);
+            System.Console.WriteLine("Press any key to exit.");
+            System.Console.ReadKey();
+        }
+    }
+}
