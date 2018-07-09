@@ -11,44 +11,24 @@ namespace Language_Swopper
         public string Name { get { return name; } }
         private string name;
 
-
-        //Main
-        public string MainForeGroundColor { get { return name; } }
-        private string mainForeGroundColor;
-        public string MainBackGroundColor { get { return name; } }
-        private string mainBackGroundColor;
-        //Text
-        public string TextForeGroundColor { get { return name; } }
-        private string textForeGroundColor;
-        public string TextBackGroundColor { get { return name; } }
-        private string textBackGroundColor;
-        //Frame
-        public string FrameForeGroundColor { get { return name; } }
-        private string frameForeGroundColor;
-        public string FrameBackGroundColor { get { return name; } }
-        private string frameBackGroundColor;
-        //ToolBar
-        public string ToolBarForeGroundColor { get { return name; } }
-        private string toolBarForeGroundColor;
-        public string ToolBarBackGroundColor { get { return name; } }
-        private string toolBarBackGroundColor;
-        //Link
-        public string LinkForeGroundColor { get { return name; } }
-        private string linkForeGroundColor;
-        public string LinkBackGroundColor { get { return name; } }
-        private string linkBackGroundColor;
-        //Section
-        public string SectionForeGroundColor { get { return name; } }
-        private string sectionForeGroundColor;
-        public string SectionBackGroundColor { get { return name; } }
-        private string sectionBackGroundColor;
-        //Coment
-        public string ComentForeGroundColor { get { return name; } }
-        private string comentForeGroundColor;
-        public string ComentBackGroundColor { get { return name; } }
-        private string comentBackGroundColor;
-
-
+        #region Main
+        public string MainForeColor { get { return mainForeColor; } }
+        private string mainForeColor;
+        public string MainBackColor { get { return mainBackColor; } }
+        private string mainBackColor;
+        #endregion
+        #region Text
+        public string TextForeColor { get { return textForeColor; } }
+        private string textForeColor;
+        public string TextBackColor { get { return textBackColor; } }
+        private string textBackColor;
+        #endregion
+        #region Menu
+        public string MenuForeColor { get { return menuForeColor; } }
+        private string menuForeColor;
+        public string MenuBackColor { get { return menuBackColor; } }
+        private string menuBackColor;
+        #endregion
 
         public Theme(string name, string[] properties)
         {
@@ -60,59 +40,74 @@ namespace Language_Swopper
                 Dproperties.Add((Property)Set, item);
                 Set++;
             }
-            try { SetTheme(Dproperties); }
-            catch (Exception)
-            {
-
-                throw;
-            }
+            SetTheme(Dproperties);
             this.name = name;
         }
-
         public Theme(string name, Dictionary<Property, string> properties)
         {
-            try { SetTheme(properties); }
-            catch (Exception)
-            {
-
-                throw;
-            }
+            SetTheme(properties);
             this.name = name;
         }
-
         private void SetTheme(Dictionary<Property, string> properties)
         {
-
+            foreach (var item in properties)
+            {
+                switch (item.Key)
+                {
+                    case Property.MainForeColor:
+                        mainForeColor = item.Value;
+                        break;
+                    case Property.MainBackColor:
+                        mainBackColor = item.Value;
+                        break;
+                    case Property.TextForeColor:
+                        textForeColor = item.Value;
+                        break;
+                    case Property.TextBackColor:
+                        textBackColor = item.Value;
+                        break;
+                    case Property.MenuForeColor:
+                        menuForeColor = item.Value;
+                        break;
+                    case Property.MenuBackColor:
+                        menuBackColor = item.Value;
+                        break;
+                    default:
+                        break;
+                }
+            }
+        }
+        public event EventHandler ThemeRefresh;
+        protected virtual void OnThemeRefresh(EventArgs e)
+        {
+            EventHandler handler = ThemeRefresh;
+            if (handler != null)
+            {
+                handler(this, e);
+            }
         }
 
         public void EditTheme(Dictionary<Property, string> properties)
         {
-
+            SetTheme(properties);
+            OnThemeRefresh(EventArgs.Empty);
         }
-
         public void EditTheme(Property property, string value)
         {
             Dictionary<Property, string> properties = new Dictionary<Property, string>();
             properties.Add(property, value);
-            EditTheme(properties);
+            SetTheme(properties);
+            OnThemeRefresh(EventArgs.Empty);
         }
 
         public enum Property
         {
-            MainForeGroundColor,
-            MainBackGroundColor,
-            TextForeGroundColor,
-            TextBackGroundColor,
-            FrameForeGroundColor,
-            FrameBackGroundColor,
-            ToolBarForeGroundColor,
-            ToolBarBackGroundColor,
-            LinkForeGroundColor,
-            LinkBackGroundColor,
-            SectionForeGroundColor,
-            SectionBackGroundColor,
-            ComentForeGroundColor,
-            ComentBackGroundColor
+            MainForeColor,
+            MainBackColor,
+            TextForeColor,
+            TextBackColor,
+            MenuForeColor,
+            MenuBackColor
         }
     }
 }

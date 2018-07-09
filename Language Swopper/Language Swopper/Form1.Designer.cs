@@ -4,38 +4,37 @@
     {
         public Theme theme = new Theme("Control", new System.Collections.Generic.Dictionary<Theme.Property, string>()
         {
-            { Theme.Property.ComentBackGroundColor, "sam" },
-            { Theme.Property.ComentForeGroundColor, "sam" },
-            { Theme.Property.FrameBackGroundColor, "sam" },
-            { Theme.Property.FrameForeGroundColor, "sam" },
-            { Theme.Property.LinkBackGroundColor, "sam" },
-            { Theme.Property.LinkForeGroundColor, "sam" },
-            { Theme.Property.MainBackGroundColor,
-                $"{System.Drawing.SystemColors.Control.A.ToString("X2")}" +
-                $"{System.Drawing.SystemColors.Control.R.ToString("X2")}" +
-                $"{System.Drawing.SystemColors.Control.G.ToString("X2")}" +
-                $"{System.Drawing.SystemColors.Control.B.ToString("X2")}" },
-            { Theme.Property.MainForeGroundColor,
-                $"{System.Drawing.SystemColors.ControlText.A.ToString("X2")}" +
-                $"{System.Drawing.SystemColors.ControlText.R.ToString("X2")}" +
-                $"{System.Drawing.SystemColors.ControlText.G.ToString("X2")}" +
-                $"{System.Drawing.SystemColors.ControlText.B.ToString("X2")}" },
-            { Theme.Property.SectionBackGroundColor, "sam" },
-            { Theme.Property.SectionForeGroundColor, "sam" },
-            { Theme.Property.TextBackGroundColor, "sam" },
-            { Theme.Property.TextForeGroundColor, "sam" },
-            { Theme.Property.ToolBarBackGroundColor,
-                $"{System.Drawing.SystemColors.Control.A.ToString("X2")}" +
-                $"{System.Drawing.SystemColors.Control.R.ToString("X2")}" +
-                $"{System.Drawing.SystemColors.Control.G.ToString("X2")}" +
-                $"{System.Drawing.SystemColors.Control.B.ToString("X2")}" },
-            { Theme.Property.ToolBarForeGroundColor,
-                $"{System.Drawing.SystemColors.ControlText.A.ToString("X2")}" +
-                $"{System.Drawing.SystemColors.ControlText.R.ToString("X2")}" +
-                $"{System.Drawing.SystemColors.ControlText.G.ToString("X2")}" +
-                $"{System.Drawing.SystemColors.ControlText.B.ToString("X2")}" }
+            { Theme.Property.MainBackColor,
+                System.Drawing.SystemColors.Control.A.ToString("X2") +
+                System.Drawing.SystemColors.Control.R.ToString("X2") +
+                System.Drawing.SystemColors.Control.G.ToString("X2") +
+                System.Drawing.SystemColors.Control.B.ToString("X2")},
+            { Theme.Property.MainForeColor,
+                System.Drawing.SystemColors.ControlText.A.ToString("X2") +
+                System.Drawing.SystemColors.ControlText.R.ToString("X2") +
+                System.Drawing.SystemColors.ControlText.G.ToString("X2") +
+                System.Drawing.SystemColors.ControlText.B.ToString("X2")},
+            { Theme.Property.MenuBackColor,
+                System.Drawing.SystemColors.Control.A.ToString("X2") +
+                System.Drawing.SystemColors.Control.R.ToString("X2") +
+                System.Drawing.SystemColors.Control.G.ToString("X2") +
+                System.Drawing.SystemColors.Control.B.ToString("X2")},
+            { Theme.Property.MenuForeColor,
+                System.Drawing.SystemColors.ControlText.A.ToString("X2") +
+                System.Drawing.SystemColors.ControlText.R.ToString("X2") +
+                System.Drawing.SystemColors.ControlText.G.ToString("X2") +
+                System.Drawing.SystemColors.ControlText.B.ToString("X2")},
+            { Theme.Property.TextBackColor,
+                System.Drawing.SystemColors.Window.A.ToString("X2") +
+                System.Drawing.SystemColors.Window.R.ToString("X2") +
+                System.Drawing.SystemColors.Window.G.ToString("X2") +
+                System.Drawing.SystemColors.Window.B.ToString("X2")},
+            { Theme.Property.TextForeColor,
+                System.Drawing.SystemColors.WindowText.A.ToString("X2") +
+                System.Drawing.SystemColors.WindowText.R.ToString("X2") +
+                System.Drawing.SystemColors.WindowText.G.ToString("X2") +
+                System.Drawing.SystemColors.WindowText.B.ToString("X2")}
         });
-
 
         /// <summary>
         /// Required designer variable.
@@ -99,13 +98,13 @@
             this.toolStripMenuItem2 = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.nameToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.richTextBox1 = new System.Windows.Forms.RichTextBox();
             this.menuStrip1.SuspendLayout();
             this.menuStrip2.SuspendLayout();
             this.SuspendLayout();
             // 
             // menuStrip1
             // 
-            this.menuStrip1.BackColor = System.Drawing.SystemColors.Control;
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.fileToolStripMenuItem,
             this.editToolStripMenuItem,
@@ -140,7 +139,7 @@
             this.newToolStripMenuItem.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.newToolStripMenuItem.Name = "newToolStripMenuItem";
             this.newToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.N)));
-            this.newToolStripMenuItem.Size = new System.Drawing.Size(146, 22);
+            this.newToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.newToolStripMenuItem.Text = "&New";
             // 
             // openToolStripMenuItem
@@ -149,13 +148,13 @@
             this.openToolStripMenuItem.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.openToolStripMenuItem.Name = "openToolStripMenuItem";
             this.openToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.O)));
-            this.openToolStripMenuItem.Size = new System.Drawing.Size(146, 22);
+            this.openToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.openToolStripMenuItem.Text = "&Open";
             // 
             // toolStripSeparator
             // 
             this.toolStripSeparator.Name = "toolStripSeparator";
-            this.toolStripSeparator.Size = new System.Drawing.Size(143, 6);
+            this.toolStripSeparator.Size = new System.Drawing.Size(177, 6);
             // 
             // saveToolStripMenuItem
             // 
@@ -163,19 +162,19 @@
             this.saveToolStripMenuItem.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.saveToolStripMenuItem.Name = "saveToolStripMenuItem";
             this.saveToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.S)));
-            this.saveToolStripMenuItem.Size = new System.Drawing.Size(146, 22);
+            this.saveToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.saveToolStripMenuItem.Text = "&Save";
             // 
             // saveAsToolStripMenuItem
             // 
             this.saveAsToolStripMenuItem.Name = "saveAsToolStripMenuItem";
-            this.saveAsToolStripMenuItem.Size = new System.Drawing.Size(146, 22);
+            this.saveAsToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.saveAsToolStripMenuItem.Text = "Save &As";
             // 
             // toolStripSeparator1
             // 
             this.toolStripSeparator1.Name = "toolStripSeparator1";
-            this.toolStripSeparator1.Size = new System.Drawing.Size(143, 6);
+            this.toolStripSeparator1.Size = new System.Drawing.Size(177, 6);
             // 
             // printToolStripMenuItem
             // 
@@ -183,7 +182,7 @@
             this.printToolStripMenuItem.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.printToolStripMenuItem.Name = "printToolStripMenuItem";
             this.printToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.P)));
-            this.printToolStripMenuItem.Size = new System.Drawing.Size(146, 22);
+            this.printToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.printToolStripMenuItem.Text = "&Print";
             // 
             // printPreviewToolStripMenuItem
@@ -191,18 +190,18 @@
             this.printPreviewToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("printPreviewToolStripMenuItem.Image")));
             this.printPreviewToolStripMenuItem.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.printPreviewToolStripMenuItem.Name = "printPreviewToolStripMenuItem";
-            this.printPreviewToolStripMenuItem.Size = new System.Drawing.Size(146, 22);
+            this.printPreviewToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.printPreviewToolStripMenuItem.Text = "Print Pre&view";
             // 
             // toolStripSeparator2
             // 
             this.toolStripSeparator2.Name = "toolStripSeparator2";
-            this.toolStripSeparator2.Size = new System.Drawing.Size(143, 6);
+            this.toolStripSeparator2.Size = new System.Drawing.Size(177, 6);
             // 
             // exitToolStripMenuItem
             // 
             this.exitToolStripMenuItem.Name = "exitToolStripMenuItem";
-            this.exitToolStripMenuItem.Size = new System.Drawing.Size(146, 22);
+            this.exitToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.exitToolStripMenuItem.Text = "E&xit";
             // 
             // editToolStripMenuItem
@@ -289,25 +288,23 @@
             // customizeToolStripMenuItem
             // 
             this.customizeToolStripMenuItem.Name = "customizeToolStripMenuItem";
-            this.customizeToolStripMenuItem.Size = new System.Drawing.Size(130, 22);
+            this.customizeToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.customizeToolStripMenuItem.Text = "&Customize";
             // 
             // optionsToolStripMenuItem
             // 
             this.optionsToolStripMenuItem.Name = "optionsToolStripMenuItem";
-            this.optionsToolStripMenuItem.Size = new System.Drawing.Size(130, 22);
+            this.optionsToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.optionsToolStripMenuItem.Text = "&Options";
             // 
             // helpToolStripMenuItem
             // 
-            this.helpToolStripMenuItem.BackColor = System.Drawing.SystemColors.Control;
             this.helpToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.contentsToolStripMenuItem,
             this.indexToolStripMenuItem,
             this.searchToolStripMenuItem,
             this.toolStripSeparator5,
             this.aboutToolStripMenuItem});
-            this.helpToolStripMenuItem.ForeColor = System.Drawing.SystemColors.ControlText;
             this.helpToolStripMenuItem.Name = "helpToolStripMenuItem";
             this.helpToolStripMenuItem.Size = new System.Drawing.Size(44, 20);
             this.helpToolStripMenuItem.Text = "&Help";
@@ -315,35 +312,34 @@
             // contentsToolStripMenuItem
             // 
             this.contentsToolStripMenuItem.Name = "contentsToolStripMenuItem";
-            this.contentsToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.contentsToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.contentsToolStripMenuItem.Text = "&Contents";
             // 
             // indexToolStripMenuItem
             // 
             this.indexToolStripMenuItem.Name = "indexToolStripMenuItem";
-            this.indexToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.indexToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.indexToolStripMenuItem.Text = "&Index";
             // 
             // searchToolStripMenuItem
             // 
             this.searchToolStripMenuItem.Name = "searchToolStripMenuItem";
-            this.searchToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.searchToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.searchToolStripMenuItem.Text = "&Search";
             // 
             // toolStripSeparator5
             // 
             this.toolStripSeparator5.Name = "toolStripSeparator5";
-            this.toolStripSeparator5.Size = new System.Drawing.Size(149, 6);
+            this.toolStripSeparator5.Size = new System.Drawing.Size(177, 6);
             // 
             // aboutToolStripMenuItem
             // 
             this.aboutToolStripMenuItem.Name = "aboutToolStripMenuItem";
-            this.aboutToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.aboutToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.aboutToolStripMenuItem.Text = "&About...";
             // 
             // menuStrip2
             // 
-            this.menuStrip2.BackColor = System.Drawing.SystemColors.Control;
             this.menuStrip2.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.dToolStripMenuItem,
             this.toolStripMenuItem2,
@@ -386,12 +382,22 @@
             this.nameToolStripMenuItem.Size = new System.Drawing.Size(51, 23);
             this.nameToolStripMenuItem.Text = "Name";
             // 
+            // richTextBox1
+            // 
+            this.richTextBox1.HideSelection = false;
+            this.richTextBox1.Location = new System.Drawing.Point(12, 54);
+            this.richTextBox1.Name = "richTextBox1";
+            this.richTextBox1.Size = new System.Drawing.Size(427, 219);
+            this.richTextBox1.TabIndex = 2;
+            this.richTextBox1.Text = "";
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Control;
             this.ClientSize = new System.Drawing.Size(800, 285);
+            this.Controls.Add(this.richTextBox1);
             this.Controls.Add(this.menuStrip1);
             this.Controls.Add(this.menuStrip2);
             this.ForeColor = System.Drawing.SystemColors.ControlText;
@@ -444,6 +450,7 @@
         private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem2;
         private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem1;
         private System.Windows.Forms.ToolStripMenuItem nameToolStripMenuItem;
+        private System.Windows.Forms.RichTextBox richTextBox1;
     }
 }
 
