@@ -77,10 +77,10 @@ namespace Language_Swopper
                         menuBackColor = item.Value;
                         break;
                     case Property.MenuHoverForeColor:
-                        menuForeColor = item.Value;
+                        menuHoverForeColor = item.Value;
                         break;
                     case Property.MenuHoverBackColor:
-                        menuBackColor = item.Value;
+                        menuHoverBackColor = item.Value;
                         break;
                     default:
                         break;
@@ -117,7 +117,7 @@ namespace Language_Swopper
             TextForeColor,
             TextBackColor,
             MenuForeColor,
-            MenuBackColor
+            MenuBackColor,
             MenuHoverForeColor,
             MenuHoverBackColor
         }

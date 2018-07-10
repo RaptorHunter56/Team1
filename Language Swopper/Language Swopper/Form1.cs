@@ -23,10 +23,54 @@ namespace Language_Swopper
             menuStrip2.ForeColor = Color.FromArgb(Int32.Parse(theme.MainForeColor, NumberStyles.HexNumber));
             richTextBox1.BackColor = Color.FromArgb(Int32.Parse(theme.TextBackColor, NumberStyles.HexNumber));
             richTextBox1.ForeColor = Color.FromArgb(Int32.Parse(theme.TextForeColor, NumberStyles.HexNumber));
-            fileToolStripMenuItem.BackColor = Color.FromArgb(Int32.Parse(theme.MenuBackColor, NumberStyles.HexNumber));
-            fileToolStripMenuItem.ForeColor = Color.FromArgb(Int32.Parse(theme.MenuForeColor, NumberStyles.HexNumber));
-            newToolStripMenuItem.BackColor = Color.FromArgb(Int32.Parse(theme.MenuBackColor, NumberStyles.HexNumber));
-            newToolStripMenuItem.ForeColor = Color.FromArgb(Int32.Parse(theme.MenuForeColor, NumberStyles.HexNumber));
+            #region file
+            fileToolStripMenuItem.BackColor = Color.FromArgb(Int32.Parse(theme.MainBackColor, NumberStyles.HexNumber));
+            fileToolStripMenuItem.ForeColor = Color.FromArgb(Int32.Parse(theme.MainForeColor, NumberStyles.HexNumber));
+
+            newToolStripMenuItem.BackColor = Color.FromArgb(Int32.Parse(theme.MenuHoverBackColor, NumberStyles.HexNumber));
+            newToolStripMenuItem.ForeColor = Color.FromArgb(Int32.Parse(theme.MenuHoverForeColor, NumberStyles.HexNumber));
+            openToolStripMenuItem.BackColor = Color.FromArgb(Int32.Parse(theme.MenuHoverBackColor, NumberStyles.HexNumber));
+            openToolStripMenuItem.ForeColor = Color.FromArgb(Int32.Parse(theme.MenuHoverForeColor, NumberStyles.HexNumber));
+            saveToolStripMenuItem.BackColor = Color.FromArgb(Int32.Parse(theme.MenuHoverBackColor, NumberStyles.HexNumber));
+            saveToolStripMenuItem.ForeColor = Color.FromArgb(Int32.Parse(theme.MenuHoverForeColor, NumberStyles.HexNumber));
+            saveAsToolStripMenuItem.BackColor = Color.FromArgb(Int32.Parse(theme.MenuHoverBackColor, NumberStyles.HexNumber));
+            saveAsToolStripMenuItem.ForeColor = Color.FromArgb(Int32.Parse(theme.MenuHoverForeColor, NumberStyles.HexNumber));
+            printToolStripMenuItem.BackColor = Color.FromArgb(Int32.Parse(theme.MenuHoverBackColor, NumberStyles.HexNumber));
+            printToolStripMenuItem.ForeColor = Color.FromArgb(Int32.Parse(theme.MenuHoverForeColor, NumberStyles.HexNumber));
+            printPreviewToolStripMenuItem.BackColor = Color.FromArgb(Int32.Parse(theme.MenuHoverBackColor, NumberStyles.HexNumber));
+            printPreviewToolStripMenuItem.ForeColor = Color.FromArgb(Int32.Parse(theme.MenuHoverForeColor, NumberStyles.HexNumber));
+            exitToolStripMenuItem.BackColor = Color.FromArgb(Int32.Parse(theme.MenuHoverBackColor, NumberStyles.HexNumber));
+            exitToolStripMenuItem.ForeColor = Color.FromArgb(Int32.Parse(theme.MenuHoverForeColor, NumberStyles.HexNumber));
+
+            toolStripSeparator.BackColor = Color.FromArgb(Int32.Parse(theme.MenuHoverBackColor, NumberStyles.HexNumber));
+            toolStripSeparator.ForeColor = Color.FromArgb(Int32.Parse(theme.MenuHoverForeColor, NumberStyles.HexNumber));
+            toolStripSeparator1.BackColor = Color.FromArgb(Int32.Parse(theme.MenuHoverBackColor, NumberStyles.HexNumber));
+            toolStripSeparator1.ForeColor = Color.FromArgb(Int32.Parse(theme.MenuHoverForeColor, NumberStyles.HexNumber));
+            toolStripSeparator2.BackColor = Color.FromArgb(Int32.Parse(theme.MenuHoverBackColor, NumberStyles.HexNumber));
+            toolStripSeparator2.ForeColor = Color.FromArgb(Int32.Parse(theme.MenuHoverForeColor, NumberStyles.HexNumber));
+            #endregion
+            #region file
+            editToolStripMenuItem.BackColor = Color.FromArgb(Int32.Parse(theme.MainBackColor, NumberStyles.HexNumber));
+            editToolStripMenuItem.ForeColor = Color.FromArgb(Int32.Parse(theme.MainForeColor, NumberStyles.HexNumber));
+
+            undoToolStripMenuItem.BackColor = Color.FromArgb(Int32.Parse(theme.MenuHoverBackColor, NumberStyles.HexNumber));
+            undoToolStripMenuItem.ForeColor = Color.FromArgb(Int32.Parse(theme.MenuHoverForeColor, NumberStyles.HexNumber));
+            redoToolStripMenuItem.BackColor = Color.FromArgb(Int32.Parse(theme.MenuHoverBackColor, NumberStyles.HexNumber));
+            redoToolStripMenuItem.ForeColor = Color.FromArgb(Int32.Parse(theme.MenuHoverForeColor, NumberStyles.HexNumber));
+            cutToolStripMenuItem.BackColor = Color.FromArgb(Int32.Parse(theme.MenuHoverBackColor, NumberStyles.HexNumber));
+            cutToolStripMenuItem.ForeColor = Color.FromArgb(Int32.Parse(theme.MenuHoverForeColor, NumberStyles.HexNumber));
+            copyToolStripMenuItem.BackColor = Color.FromArgb(Int32.Parse(theme.MenuHoverBackColor, NumberStyles.HexNumber));
+            copyToolStripMenuItem.ForeColor = Color.FromArgb(Int32.Parse(theme.MenuHoverForeColor, NumberStyles.HexNumber));
+            pasteToolStripMenuItem.BackColor = Color.FromArgb(Int32.Parse(theme.MenuHoverBackColor, NumberStyles.HexNumber));
+            pasteToolStripMenuItem.ForeColor = Color.FromArgb(Int32.Parse(theme.MenuHoverForeColor, NumberStyles.HexNumber));
+            selectAllToolStripMenuItem.BackColor = Color.FromArgb(Int32.Parse(theme.MenuHoverBackColor, NumberStyles.HexNumber));
+            selectAllToolStripMenuItem.ForeColor = Color.FromArgb(Int32.Parse(theme.MenuHoverForeColor, NumberStyles.HexNumber));
+
+            toolStripSeparator3.BackColor = Color.FromArgb(Int32.Parse(theme.MenuHoverBackColor, NumberStyles.HexNumber));
+            toolStripSeparator3.ForeColor = Color.FromArgb(Int32.Parse(theme.MenuHoverForeColor, NumberStyles.HexNumber));
+            toolStripSeparator4.BackColor = Color.FromArgb(Int32.Parse(theme.MenuHoverBackColor, NumberStyles.HexNumber));
+            toolStripSeparator4.ForeColor = Color.FromArgb(Int32.Parse(theme.MenuHoverForeColor, NumberStyles.HexNumber));
+            #endregion
         }
 
         public Form1()
@@ -34,6 +78,7 @@ namespace Language_Swopper
             theme.ThemeRefresh += ThemeRefreshControls;
             InitializeComponent();
             theme.EditTheme(Theme.Property.MainBackColor, "FFFF0000");
+            theme.EditTheme(Theme.Property.MenuHoverBackColor, "FFFF0000");
         }
 
         #region MenuClicks
