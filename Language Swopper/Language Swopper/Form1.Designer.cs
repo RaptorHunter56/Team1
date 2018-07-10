@@ -24,6 +24,16 @@
                 System.Drawing.SystemColors.ControlText.R.ToString("X2") +
                 System.Drawing.SystemColors.ControlText.G.ToString("X2") +
                 System.Drawing.SystemColors.ControlText.B.ToString("X2")},
+            { Theme.Property.MenuHoverBackColor,
+                System.Drawing.SystemColors.Control.A.ToString("X2") +
+                System.Drawing.SystemColors.Control.R.ToString("X2") +
+                System.Drawing.SystemColors.Control.G.ToString("X2") +
+                System.Drawing.SystemColors.Control.B.ToString("X2")},
+            { Theme.Property.MenuHoverForeColor,
+                System.Drawing.SystemColors.ControlText.A.ToString("X2") +
+                System.Drawing.SystemColors.ControlText.R.ToString("X2") +
+                System.Drawing.SystemColors.ControlText.G.ToString("X2") +
+                System.Drawing.SystemColors.ControlText.B.ToString("X2")},
             { Theme.Property.TextBackColor,
                 System.Drawing.SystemColors.Window.A.ToString("X2") +
                 System.Drawing.SystemColors.Window.R.ToString("X2") +

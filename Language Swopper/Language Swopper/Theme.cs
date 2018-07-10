@@ -28,6 +28,10 @@ namespace Language_Swopper
         private string menuForeColor;
         public string MenuBackColor { get { return menuBackColor; } }
         private string menuBackColor;
+        public string MenuHoverForeColor { get { return menuHoverForeColor; } }
+        private string menuHoverForeColor;
+        public string MenuHoverBackColor { get { return menuHoverBackColor; } }
+        private string menuHoverBackColor;
         #endregion
 
         public Theme(string name, string[] properties)
@@ -72,6 +76,12 @@ namespace Language_Swopper
                     case Property.MenuBackColor:
                         menuBackColor = item.Value;
                         break;
+                    case Property.MenuHoverForeColor:
+                        menuForeColor = item.Value;
+                        break;
+                    case Property.MenuHoverBackColor:
+                        menuBackColor = item.Value;
+                        break;
                     default:
                         break;
                 }
@@ -108,6 +118,8 @@ namespace Language_Swopper
             TextBackColor,
             MenuForeColor,
             MenuBackColor
+            MenuHoverForeColor,
+            MenuHoverBackColor
         }
     }
 }
