@@ -1,8 +1,11 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Drawing;
+using System.Globalization;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 
 namespace Language_Swopper
 {
@@ -11,27 +14,36 @@ namespace Language_Swopper
         public string Name { get { return name; } }
         private string name;
 
+        private string ColorToString(Color color)
+        {
+            return (color.A.ToString("X2") + color.R.ToString("X2") + color.G.ToString("X2") + color.B.ToString("X2"));
+        }
+        private Color StringToColor(string input)
+        {
+            return Color.FromArgb(Int32.Parse(input, NumberStyles.HexNumber));
+        }
+
         #region Main
-        public string MainForeColor { get { return mainForeColor; } }
-        private string mainForeColor;
-        public string MainBackColor { get { return mainBackColor; } }
-        private string mainBackColor;
+        public Color MainForeColor { get { return mainForeColor; } }
+        private Color mainForeColor;
+        public Color MainBackColor { get { return mainBackColor; } }
+        private Color mainBackColor;
         #endregion
         #region Text
-        public string TextForeColor { get { return textForeColor; } }
-        private string textForeColor;
-        public string TextBackColor { get { return textBackColor; } }
-        private string textBackColor;
+        public Color TextForeColor { get { return textForeColor; } }
+        private Color textForeColor;
+        public Color TextBackColor { get { return textBackColor; } }
+        private Color textBackColor;
         #endregion
         #region Menu
-        public string MenuForeColor { get { return menuForeColor; } }
-        private string menuForeColor;
-        public string MenuBackColor { get { return menuBackColor; } }
-        private string menuBackColor;
-        public string MenuHoverForeColor { get { return menuHoverForeColor; } }
-        private string menuHoverForeColor;
-        public string MenuHoverBackColor { get { return menuHoverBackColor; } }
-        private string menuHoverBackColor;
+        public Color MenuForeColor { get { return menuForeColor; } }
+        private Color menuForeColor;
+        public Color MenuBackColor { get { return menuBackColor; } }
+        private Color menuBackColor;
+        public Color MenuHoverForeColor { get { return menuHoverForeColor; } }
+        private Color menuHoverForeColor;
+        public Color MenuHoverBackColor { get { return menuHoverBackColor; } }
+        private Color menuHoverBackColor;
         #endregion
 
         public Theme(string name, string[] properties)
@@ -59,28 +71,28 @@ namespace Language_Swopper
                 switch (item.Key)
                 {
                     case Property.MainForeColor:
-                        mainForeColor = item.Value;
+                        mainForeColor = StringToColor(item.Value);
                         break;
                     case Property.MainBackColor:
-                        mainBackColor = item.Value;
+                        mainBackColor = StringToColor(item.Value);
                         break;
                     case Property.TextForeColor:
-                        textForeColor = item.Value;
+                        textForeColor = StringToColor(item.Value);
                         break;
                     case Property.TextBackColor:
-                        textBackColor = item.Value;
+                        textBackColor = StringToColor(item.Value);
                         break;
                     case Property.MenuForeColor:
-                        menuForeColor = item.Value;
+                        menuForeColor = StringToColor(item.Value);
                         break;
                     case Property.MenuBackColor:
-                        menuBackColor = item.Value;
+                        menuBackColor = StringToColor(item.Value);
                         break;
                     case Property.MenuHoverForeColor:
-                        menuHoverForeColor = item.Value;
+                        menuHoverForeColor = StringToColor(item.Value);
                         break;
                     case Property.MenuHoverBackColor:
-                        menuHoverBackColor = item.Value;
+                        menuHoverBackColor = StringToColor(item.Value);
                         break;
                     default:
                         break;
@@ -122,4 +134,5 @@ namespace Language_Swopper
             MenuHoverBackColor
         }
     }
+    
 }
