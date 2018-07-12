@@ -14,11 +14,11 @@ namespace Language_Swopper
         public string Name { get { return name; } }
         private string name;
 
-        private string ColorToString(Color color)
+        public static string ColorToString(Color color)
         {
             return (color.A.ToString("X2") + color.R.ToString("X2") + color.G.ToString("X2") + color.B.ToString("X2"));
         }
-        private Color StringToColor(string input)
+        public static Color StringToColor(string input)
         {
             return Color.FromArgb(Int32.Parse(input, NumberStyles.HexNumber));
         }
@@ -134,5 +134,97 @@ namespace Language_Swopper
             MenuHoverBackColor
         }
     }
-    
+    public class MyRenderer : ToolStripProfessionalRenderer
+    {
+        private bool top = false;
+
+        public MyRenderer(bool Top = false)
+        {
+            top = Top;
+        }
+        protected override void OnRenderSeparator(ToolStripSeparatorRenderEventArgs e)
+        {
+            Rectangle rc = new Rectangle(Point.Empty, e.Item.Size);
+            e.Graphics.FillRectangle(new SolidBrush(((Form1)e.Item.OwnerItem.Owner.Parent).theme.MenuBackColor), rc);
+            e.Graphics.DrawLine(new Pen(((Form1)e.Item.OwnerItem.Owner.Parent).theme.MenuForeColor), 2, rc.Height / 2, rc.Width - 2, rc.Height / 2);
+        }
+        protected override void OnRenderMenuItemBackground(ToolStripItemRenderEventArgs e)
+        {
+            Rectangle rc = new Rectangle(Point.Empty, e.Item.Size);
+            Brush bc = new SolidBrush(e.Item.BackColor);
+            try
+            {
+                bc = new SolidBrush(((Form1)e.Item.Owner.Parent).theme.MenuBackColor);
+                e.Item.ForeColor = ((Form1)e.Item.Owner.Parent).theme.MenuForeColor;
+            }
+            catch
+            {
+                try
+                {
+                    bc = new SolidBrush(((Form1)e.Item.OwnerItem.Owner.Parent).theme.MenuBackColor);
+                    e.Item.ForeColor = ((Form1)e.Item.OwnerItem.Owner.Parent).theme.MenuForeColor;
+                }
+                catch { }
+            }
+            if (top)
+            {
+                if (!e.Item.Selected) base.OnRenderMenuItemBackground(e);
+                else
+                {
+                    try
+                    {
+
+                        if (e.Item.Tag.ToString() == "Name")
+                        {
+                            bc = new SolidBrush(e.Item.BackColor);
+                            e.Item.ForeColor = ((Form1)e.Item.Owner.Parent).theme.MenuHoverForeColor;
+                            //e.Graphics.DrawRectangle(Pens.Black, 1, 0, rc.Width - 2, rc.Height - 1);
+                        }
+                        else
+                        {
+                            bc = new SolidBrush(((Form1)e.Item.Owner.Parent).theme.MenuHoverBackColor);
+                            e.Item.ForeColor = ((Form1)e.Item.Owner.Parent).theme.MenuHoverForeColor;
+                            //e.Graphics.DrawRectangle(Pens.Black, 1, 0, rc.Width - 2, rc.Height - 1);
+                        }
+                    }
+                    catch (Exception)
+                    {
+                        bc = new SolidBrush(((Form1)e.Item.Owner.Parent).theme.MenuHoverBackColor);
+                        e.Item.ForeColor = ((Form1)e.Item.Owner.Parent).theme.MenuHoverForeColor;
+                        //e.Graphics.DrawRectangle(Pens.Black, 1, 0, rc.Width - 2, rc.Height - 1);
+                    }
+                }
+            }
+            else
+            {
+                if (!e.Item.Selected) base.OnRenderMenuItemBackground(e);
+                else if (e.Item.OwnerItem != null)
+                {
+                    if (e.Item.OwnerItem.GetType().ToString() == "System.Windows.Forms.ToolStripMenuItem")
+                    {
+                        bc = new SolidBrush(((Form1)e.Item.OwnerItem.Owner.Parent).theme.MenuHoverBackColor);
+                        e.Item.ForeColor = ((Form1)e.Item.OwnerItem.Owner.Parent).theme.MenuHoverForeColor;
+                        //e.Graphics.DrawRectangle(Pens.Black, 1, 0, rc.Width - 2, rc.Height - 1);
+                    }
+                }
+                else
+                {
+                    //foreach (ToolStripMenuItem Tm_items in menustrp.Items)
+                    //{
+                    //    Tm_items.DropDownOpened += (sender, args) => {
+                    //        MessageBox.Show("Open"); // Perform logic here
+                    //    };
+
+                    //}
+
+                    //string tim = e.Item.OwnerItem.GetType().ToString();
+                    bc = new SolidBrush(((Form1)e.Item.Owner.Parent).theme.MenuHoverBackColor);
+                    e.Item.ForeColor = ((Form1)e.Item.Owner.Parent).theme.MenuHoverForeColor;
+                    //e.Graphics.DrawRectangle(Pens.Black, 1, 0, rc.Width - 2, rc.Height - 1);
+                }
+            }
+            e.Graphics.FillRectangle(bc, rc);
+        }
+    }
+        
 }
