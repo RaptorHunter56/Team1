@@ -72,6 +72,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.fileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -103,7 +104,7 @@
             this.searchToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripSeparator5 = new System.Windows.Forms.ToolStripSeparator();
             this.aboutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.menuStrip2 = new System.Windows.Forms.MenuStrip();
+            this.TitleStrip = new System.Windows.Forms.MenuStrip();
             this.dToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripMenuItem2 = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
@@ -116,9 +117,9 @@
             this.panel3 = new System.Windows.Forms.Panel();
             this.panel4 = new System.Windows.Forms.Panel();
             this.menuStrip1.SuspendLayout();
-            this.menuStrip2.SuspendLayout();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
+            this.TitleStrip.SuspendLayout();
             this.SuspendLayout();
             // 
             // menuStrip1
@@ -358,24 +359,24 @@
             this.aboutToolStripMenuItem.Size = new System.Drawing.Size(122, 22);
             this.aboutToolStripMenuItem.Text = "&About...";
             // 
-            // menuStrip2
+            // TitleStrip
             // 
-            this.menuStrip2.BackColor = System.Drawing.SystemColors.Control;
-            this.menuStrip2.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.TitleStrip.BackColor = System.Drawing.SystemColors.Control;
+            this.TitleStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.dToolStripMenuItem,
             this.toolStripMenuItem2,
             this.toolStripMenuItem1,
             this.nameToolStripMenuItem});
-            this.menuStrip2.Location = new System.Drawing.Point(0, 0);
-            this.menuStrip2.Name = "menuStrip2";
-            this.menuStrip2.Padding = new System.Windows.Forms.Padding(6, 0, 1, 0);
-            this.menuStrip2.RenderMode = System.Windows.Forms.ToolStripRenderMode.Professional;
-            this.menuStrip2.Size = new System.Drawing.Size(600, 24);
-            this.menuStrip2.TabIndex = 1;
-            this.menuStrip2.Text = "menuStrip2";
-            this.menuStrip2.MouseDown += new System.Windows.Forms.MouseEventHandler(this.menuStrip2_MouseDown);
-            this.menuStrip2.MouseMove += new System.Windows.Forms.MouseEventHandler(this.menuStrip2_MouseMove);
-            this.menuStrip2.MouseUp += new System.Windows.Forms.MouseEventHandler(this.menuStrip2_MouseUp);
+            this.TitleStrip.Location = new System.Drawing.Point(0, 0);
+            this.TitleStrip.Name = "TitleStrip";
+            this.TitleStrip.Padding = new System.Windows.Forms.Padding(6, 0, 1, 0);
+            this.TitleStrip.RenderMode = System.Windows.Forms.ToolStripRenderMode.Professional;
+            this.TitleStrip.Size = new System.Drawing.Size(800, 24);
+            this.TitleStrip.TabIndex = 1;
+            this.TitleStrip.Text = "menuStrip2";
+            this.TitleStrip.MouseDown += new System.Windows.Forms.MouseEventHandler(this.menuStrip2_MouseDown);
+            this.TitleStrip.MouseMove += new System.Windows.Forms.MouseEventHandler(this.menuStrip2_MouseMove);
+            this.TitleStrip.MouseUp += new System.Windows.Forms.MouseEventHandler(this.menuStrip2_MouseUp);
             // 
             // dToolStripMenuItem
             // 
@@ -501,19 +502,20 @@
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.menuStrip1);
-            this.Controls.Add(this.menuStrip2);
+            this.Controls.Add(this.TitleStrip);
             this.ForeColor = System.Drawing.SystemColors.ControlText;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "Form1";
             this.Text = "Form1";
             this.ClientSizeChanged += new System.EventHandler(this.Form1_ClientSizeChanged);
             this.MouseLeave += new System.EventHandler(this.Form1_MouseLeave);
+            this.MouseMove += new System.Windows.Forms.MouseEventHandler(this.menuStrip2_MouseMove);
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
-            this.menuStrip2.ResumeLayout(false);
-            this.menuStrip2.PerformLayout();
             this.tabControl1.ResumeLayout(false);
             this.tabPage1.ResumeLayout(false);
+            this.TitleStrip.ResumeLayout(false);
+            this.TitleStrip.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -551,7 +553,7 @@
         private System.Windows.Forms.ToolStripMenuItem searchToolStripMenuItem;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator5;
         private System.Windows.Forms.ToolStripMenuItem aboutToolStripMenuItem;
-        private System.Windows.Forms.MenuStrip menuStrip2;
+        private System.Windows.Forms.MenuStrip TitleStrip;
         private System.Windows.Forms.ToolStripMenuItem dToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem2;
         private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem1;
@@ -563,6 +565,7 @@
         private System.Windows.Forms.TabPage tabPage1;
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.Panel panel4;
+        private System.Windows.Forms.Timer MovementSnap;
     }
 }
 

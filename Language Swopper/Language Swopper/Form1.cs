@@ -17,8 +17,8 @@ namespace Language_Swopper
         {
             menuStrip1.BackColor = theme.MenuBackColor;
             menuStrip1.ForeColor = theme.MenuForeColor;
-            menuStrip2.BackColor = theme.MenuBackColor;
-            menuStrip2.ForeColor = theme.MenuForeColor;
+            TitleStrip.BackColor = theme.MenuBackColor;
+            TitleStrip.ForeColor = theme.MenuForeColor;
             foreach (Control item in this.Controls)
             {
                 item.Refresh();
@@ -30,9 +30,10 @@ namespace Language_Swopper
             theme.ThemeRefresh += ThemeRefreshControls;
             InitializeComponent();
             menuStrip1.Renderer = new MyRenderer();
-            menuStrip2.Renderer = new MyRenderer(true);
+            TitleStrip.Renderer = new MyRenderer(true);
 
             ThemeRefreshControls(this, new EventArgs());
+            
         }
 
         #region Menu
@@ -81,7 +82,7 @@ namespace Language_Swopper
         }
         private void Form1_MouseLeave(object sender, EventArgs e)
         {
-            TogleMove = false;
+            //TogleMove = false;
         }
 
         private void dToolStripMenuItem_Click(object sender, EventArgs e)
@@ -101,6 +102,12 @@ namespace Language_Swopper
         {
             WindowState = FormWindowState.Minimized;
         }
+
         #endregion
+
+        private void timer1_Tick(object sender, EventArgs e)
+        {
+            menuStrip2_MouseMove(TitleStrip, new MouseEventArgs(new MouseButtons(), 0, 0, 0, 0));
+        }
     }
 }
