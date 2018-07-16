@@ -54,7 +54,7 @@ namespace Language_Swopper
                     decimal PreSet = (decimal)point.X / (decimal)this.Width;
                     this.WindowState = FormWindowState.Normal;
                     int PreSetHalf = (int)(PreSet * this.Width);
-                    point = new Point(PreSetHalf, e.Y);
+                    point = new Point(PreSetHalf, e.Y + 5);
                     this.SetDesktopLocation(MousePosition.X - PreSetHalf, 10);
                 }
             }

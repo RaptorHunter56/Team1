@@ -116,10 +116,11 @@
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.panel3 = new System.Windows.Forms.Panel();
             this.panel4 = new System.Windows.Forms.Panel();
+            this.MovementSnap = new System.Windows.Forms.Timer(this.components);
             this.menuStrip1.SuspendLayout();
+            this.TitleStrip.SuspendLayout();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
-            this.TitleStrip.SuspendLayout();
             this.SuspendLayout();
             // 
             // menuStrip1
@@ -371,7 +372,7 @@
             this.TitleStrip.Name = "TitleStrip";
             this.TitleStrip.Padding = new System.Windows.Forms.Padding(6, 0, 1, 0);
             this.TitleStrip.RenderMode = System.Windows.Forms.ToolStripRenderMode.Professional;
-            this.TitleStrip.Size = new System.Drawing.Size(800, 24);
+            this.TitleStrip.Size = new System.Drawing.Size(600, 24);
             this.TitleStrip.TabIndex = 1;
             this.TitleStrip.Text = "menuStrip2";
             this.TitleStrip.MouseDown += new System.Windows.Forms.MouseEventHandler(this.menuStrip2_MouseDown);
@@ -490,6 +491,12 @@
             this.panel4.Size = new System.Drawing.Size(3, 386);
             this.panel4.TabIndex = 6;
             // 
+            // MovementSnap
+            // 
+            this.MovementSnap.Enabled = true;
+            this.MovementSnap.Interval = 10;
+            this.MovementSnap.Tick += new System.EventHandler(this.timer1_Tick);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -512,10 +519,10 @@
             this.MouseMove += new System.Windows.Forms.MouseEventHandler(this.menuStrip2_MouseMove);
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
-            this.tabControl1.ResumeLayout(false);
-            this.tabPage1.ResumeLayout(false);
             this.TitleStrip.ResumeLayout(false);
             this.TitleStrip.PerformLayout();
+            this.tabControl1.ResumeLayout(false);
+            this.tabPage1.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
