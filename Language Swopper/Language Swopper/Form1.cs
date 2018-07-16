@@ -64,11 +64,15 @@ namespace Language_Swopper
             {
                 panel1.Visible = true;
                 panel2.Visible = true;
+                panel3.Visible = true;
+                panel4.Visible = true;
             }
             else
             {
                 panel1.Visible = false;
                 panel2.Visible = false;
+                panel3.Visible = false;
+                panel4.Visible = false;
             }
         }
         private void menuStrip2_MouseUp(object sender, MouseEventArgs e)
